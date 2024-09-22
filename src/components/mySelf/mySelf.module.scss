@@ -1,0 +1,51 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  @include phone {
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: px(24);
+    margin-bottom: 60px;
+  }
+
+  .image {
+    width: 100%;
+    img {
+      width: px(500);
+      height: auto;
+
+      @include phone {
+        width: 100%;
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: px(24);
+
+    h2 {
+      @include subHeading();
+      letter-spacing: -0.01em;
+
+      @include phone {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      @include body();
+
+      @include phone {
+        font-size: 16px;
+        line-height: 1.5em;
+      }
+    }
+  }
+}

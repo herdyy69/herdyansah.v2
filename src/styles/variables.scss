@@ -1,0 +1,130 @@
+$satoshi: var(--font-satoshi), serif;
+$hankenGrotesk: var(--font-hanken-grotesk), sans-serif;
+$ibmPlexSans: var(--font-ibm-plex-sans), sans-serif;
+$white: var(--white);
+$black: var(--black);
+$black2: var(--black2);
+$gray: var(--gray);
+$orange: var(--orange);
+$green: var(--green);
+$subheading: #667085;
+$body: var(--body);
+
+@mixin container($mx: 92vw) {
+  max-width: $mx;
+  margin: 0 auto;
+
+  @media screen and (max-width: 700px) {
+    width: calc(100% - 48px);
+  }
+}
+
+@mixin section() {
+  padding: px(80) 0;
+
+  @include phone {
+    padding: 40px 0;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin heading() {
+  font-family: $satoshi;
+  font-size: px(56);
+  font-weight: 500;
+  color: $black2;
+  line-height: 1.35em;
+  letter-spacing: -0.01em;
+
+  @include phone {
+    font-size: 24px;
+  }
+}
+
+@mixin subHeading() {
+  font-family: $hankenGrotesk;
+  font-weight: 400;
+  color: $subheading;
+  letter-spacing: 0.2em;
+  font-size: px(20);
+  line-height: 1.6em;
+
+  @include phone {
+    font-size: 20px;
+  }
+}
+
+@mixin preText() {
+  font-family: $ibmPlexSans;
+  font-weight: 400;
+  color: $subheading;
+  letter-spacing: 0.2em;
+  font-size: px(20);
+  line-height: 1.6em;
+
+  @include phone {
+    font-size: 14px;
+  }
+}
+
+@mixin body {
+  font-family: $hankenGrotesk;
+  font-weight: 400;
+  font-size: px(20);
+  letter-spacing: -0.02em;
+  line-height: 1.4em;
+  color: #344054;
+
+  @include phone {
+    font-size: 16px;
+    line-height: 1.85em;
+  }
+}
+
+@mixin buttonTransparent() {
+  display: block;
+  width: fit-content;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: px(12) px(24);
+  color: #fafafa;
+  font-size: px(20);
+  font-family: $hankenGrotesk;
+  line-height: 1.2em;
+  letter-spacing: -0.4px;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include phone() {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
+@mixin lineClamp($n: 3) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+}
+
+@function px($n) {
+  @return $n * 0.95vw / 16;
+}
+
+@mixin noScrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

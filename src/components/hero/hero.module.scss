@@ -1,0 +1,49 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  z-index: 10;
+
+  @include container;
+
+  @include phone {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: px(24);
+  }
+
+  .title {
+    background-color: $white;
+    font-family: $satoshi;
+    font-size: px(120);
+    font-weight: 600;
+    color: $black2;
+    border-bottom: 1px solid $black2;
+    padding: px(0) 0;
+    transition: font-size 0.5s ease;
+
+    @include phone {
+      font-size: 42px;
+    }
+  }
+
+  .description {
+    font-family: $ibmPlexSans;
+    font-weight: 400;
+    color: $subheading;
+    font-size: px(24);
+    line-height: 1.6em;
+    margin-top: px(12);
+    transition: opacity 0.5s ease;
+
+    @include phone {
+      font-size: 16px;
+      line-height: 1.3em;
+    }
+  }
+}
+
+.pinned {
+  height: px(0) !important;
+}

@@ -1,0 +1,88 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-height: 100vh;
+  padding-bottom: px(48);
+
+  @include phone {
+    display: flex;
+    gap: px(24);
+    padding-bottom: px(24);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: px(24);
+
+    @include phone {
+      gap: 12px;
+    }
+
+    h3 {
+      font-family: $satoshi;
+      font-size: px(48);
+      font-weight: 600;
+      color: $black2;
+      letter-spacing: -0.01em;
+
+      @include phone {
+        font-size: 24px;
+      }
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: px(24);
+
+      @include phone {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: px(12);
+
+        @include phone {
+          gap: 6px;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: px(12);
+          border: 1px solid $gray;
+        }
+
+        .description {
+          h4 {
+            font-family: $satoshi;
+            font-size: px(16);
+            font-weight: 600;
+            color: $black2;
+            letter-spacing: -0.01em;
+
+            @include phone {
+              font-size: 14px;
+            }
+          }
+          p {
+            font-family: $ibmPlexSans;
+            font-weight: 400;
+            color: $subheading;
+            font-size: px(14);
+            line-height: 1.6em;
+
+            @include phone {
+              font-size: 12px;
+              line-height: 1.3em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
