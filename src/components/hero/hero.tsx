@@ -66,10 +66,10 @@ export const Hero = () => {
 
   return (
     <div className={`${s.hero} ${isPinned ? s.pinned : ""}`}>
-      <h1 className={s.title} data-split-reveal data-reveal-delay="4">
+      <h1 className={s.title} data-split-reveal data-reveal-delay="3">
         HERDYANSAH
       </h1>
-      <p className={s.description} data-reveal data-reveal-delay="4.4">
+      <p className={s.description} data-reveal data-reveal-delay="3.4">
         An independent software engineer who loves to learn and share knowledge.
       </p>
     </div>
