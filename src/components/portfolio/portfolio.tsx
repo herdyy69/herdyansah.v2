@@ -9,7 +9,7 @@ interface PortfolioItem {
   title: string;
   description: string;
   image: string;
-  link: string;
+  link?: string;
 }
 
 export const Portfolio = () => {
@@ -114,5 +114,11 @@ const PORTFOLIO: PortfolioItem[] = [
       "A platform for people to get information and share their knowledge.",
     image: "/images/portfolio/pyc.png",
     link: "https://staging.purnomoyusgiantorocenter.org/",
+  },
+
+  {
+    title: "DESTIANA & DANY",
+    description: "A platform for wedding invitation and RSVP.",
+    image: "/images/portfolio/desti&dany.png",
   },
 ];
